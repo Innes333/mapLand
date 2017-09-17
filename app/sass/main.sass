@@ -14,6 +14,86 @@
 	position: relative
 	vertical-align: top
 
+section
+	min-height: 300px
+	
+
+// Section titles
+.s-headline
+	position: relative
+	padding: $p30 $p40
+	font-size: 25px
+	font-weight: 600
+	text-transform: uppercase
+	letter-spacing: 2px
+	&::before
+		position: absolute
+		left: 0
+		top: 50%
+		margin-top: -2px
+		content: ''
+		height: 2px
+		width: 30px
+		background: $black
+
 //Custom Styles Here
 header
 	position: relative
+	height: 100vh
+	color: $white
+	@extend %extend_bg_gradient
+	.logo
+		img
+			margin-top: $m20
+			height: 50px
+
+	.w-title
+		margin-top: 40%
+		transform: translateY(-50%)
+		h1
+			position: relative
+			margin-bottom: $m20
+			padding-bottom: $p25
+			text-transform: uppercase
+			font-size: 55px
+			line-height: 55px
+			letter-spacing: 5px
+			&::before
+				position: absolute
+				bottom: 0
+				left: 0
+				content: ''
+				height: 2px
+				width: 140px
+				background: $white
+		h3
+			font-size: 30px
+			line-height: 30px
+			text-transform: uppercase 
+			list-style-position: 3px
+
+	.w-menu
+		position: fixed	
+		width: 100%
+		ul
+			li
+				display: inline-block
+				a
+					display: inline-block
+					padding: $p15
+					color: $white
+					font-size: 14px
+					font-weight: 600
+					text-transform: uppercase
+
+	
+// Section about 
+#about
+	padding-bottom: $p50
+	border-bottom: 1px solid $silver
+	.about-img
+		margin-top: $m30
+	ul
+		padding: $p10 $p30
+		li
+			list-style-type: circle 

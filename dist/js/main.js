@@ -129,7 +129,7 @@
 		// cube rotatio
 		methods.cubeRotation(cube.cube);
 
-		methods.renderMap();
+		// methods.renderMap();
 
 		 
 

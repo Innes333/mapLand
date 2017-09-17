@@ -14,683 +14,86 @@
 	position: relative
 	vertical-align: top
 
+section
+	min-height: 300px
+	
+
+// Section titles
+.s-headline
+	position: relative
+	padding: $p30 $p40
+	font-size: 25px
+	font-weight: 600
+	text-transform: uppercase
+	letter-spacing: 2px
+	&::before
+		position: absolute
+		left: 0
+		top: 50%
+		margin-top: -2px
+		content: ''
+		height: 2px
+		width: 30px
+		background: $black
+
 //Custom Styles Here
 header
 	position: relative
-	background-image: url("../img/bg.jpg")
-	// background-image: url("../img/galaxy.jpg")
-	background-size: cover
-	background-attachment: fixed
-	padding: 25px
-	border: 25px solid #fff
-	.flower-1
-		position: absolute
-		bottom: -40px
-		left: -105px
-		width: 275px
-		height: auto
-		z-index: 10
-		transform: rotate(194deg)
-	.flower-2
-		position: absolute
-		bottom: 102px
-		right: -105px
-		width: 275px
-		height: auto
-		z-index: 10
-	.w-content
-		position: relative
-		height: 100%
-		background-color: #FFF
-	.w-title
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%,-55%)
-		.title
-			font-size: 110px
-			line-height: 120px
-			letter-spacing: 5px
-			background-color: #FFF
-			background-image: url("../img/title-bg.jpg")
-			// background-image: url("../img/galaxy.jpg")
-			background-repeat: no-repeat
-			background-attachment: fixed
-			background-size: 120%
-			color: $main
-			-webkit-background-clip: text
-			-webkit-text-fill-color: transparent
-			&:before
-				position: absolute
-				content: ''
-				height: 40%
-				width: 45%
-				top: 0
-				left: -4px
-				background-color: #FFF
-				z-index: -1
-			&:after
-				position: absolute
-				content: ''
-				width: 105%
-				height: 80%
-				bottom: -3%
-				left: -3%
-				border: 2px solid $main
-				z-index: -2
-		.sub-title
-			position: absolute
-			right: -10px
-			top: 22px
-			font-size: 18px
-			letter-spacing: 1px
-			text-transform: uppercase
-			color: $main
-// Navigation start
-.nav-bar
-	position: fixed
-	text-align: right
-	right: 50px
-	top: 50px
-	z-index: 100
-	width: 40px
-	height: 35px
-	@include transition(top, 0.5s)
-	&.fixed
-		top: 15px
-		right: 20px
-	.burger-button
-		position: absolute
-		top: 8px
-		right: 10px
-		display: inline-block
-		width: 40px
-		height: 35px
-		span
-			display: block
-			width: 40px
-			height: 5px
-			background-color: $main
-		&.active + .w-menu
-			width: 400px
-			opacity: 1
-	.w-menu
-		position: absolute
-		top: 0
-		right: 0
-		padding: 45px 0
-		// width: 400px
-		width: 0
-		opacity: 0
-		min-height: 350px
-		background-color: #FFF
-		box-shadow: 1px 1px 3px $main
-		@include transition(all 0.4s)
-		.label
-			position: absolute
-			top: 33px
-			left: 20%
-			z-index: 11
-			font-size: 17px
-			color: $main
-		.menu
-			position: relative
-			z-index: 10
-			&:before
-				position: absolute
-				content: ''
-				top: 0
-				left: 10%
-				width: 80%
-				height: 103%
-				border: 1px solid $main
-				z-index: -1
-			&:after
-				position: absolute
-				content: ''
-				top: -10px
-				left: 18%
-				height: 30px
-				width: 60px
-				background-color: #FFF
-			a
-				position: relative
-				display: inline-block
-				padding: 10px 0
-				width: 100%
-				height: 100%
-				font-size: 18px
-				text-transform: uppercase
-				line-height: 30px
-				color: $main
-				@include transition(text-shadow .5s)
-				&:before
-					position: absolute
-					content: ''
-					top: 25px
-					left: 100px
-					height: 1px
-					width: 0
-					@include transition(width .5s)
-				&:after
-					position: absolute
-					content: ''
-					top: 25px
-					right: 100px
-					height: 1px
-					width: 0
-					@include transition(width .5s)
-				&:hover
-					text-shadow: 1px 2px 3px $main
-				&:hover:before,
-				&:hover:after
-					background-color: $main
-					width: 25px
-
-.heading
-	text-transform: uppercase
-h3.heading
-	letter-spacing: 2px
-	text-align: center
-h4.heading
-	font-family: inherit
-	font-style: italic
-
-// Section about start
-#about
-	position: relative
-	min-height: 460px
-	padding: 0
-	.w-text-about
-		position: absolute
-		top: -80px
-		left: 0
-		padding: 80px 50px 90px
-		min-height: 555px
-		z-index: 11
-		color: #fff
-		text-align: center
-		background-color: #5a5aa3
-		background: filter-gradient(#503388, #c178a7, horizontal)
-		background: linear-gradient(left top,#503388 0,#453184 17%,#5d43a5 49%,#844eb5 70%,#a160dc 100%)
-		.headline
-			position: relative
-			margin-bottom: 40px
-			font-size: 38px
-			color: #fff
-			text-align: left
-			text-shadow: 2px 5px 5px $main
-			&:before
-				position: absolute
-				content: ''
-				bottom: -4px
-				left: 0
-				height: 2px
-				width: 35px
-				background-color: #fff
-		p
-			text-align: left
-			font-size: 18px
-			line-height: 24px
-			letter-spacing: 2px
-		.sub-headline
-			margin: 30px 0
-			color: #fff
-			font-size: 17px
-			font-family: 'Monotype Corsiva','Comic Sans MS',cursive
-			font-weight: 400
-			text-align: right
-
-	.w-content
-		padding-left: 70px
-		min-height: 450px
-		position: relative
-		.v-heading
-			position: absolute
-			top: 50%
-			left: -130px
-			margin-top: -50px
-			transform: rotate(-90deg)
-			color: $main
-			text-transform: uppercase
-			font-size: 19px
-			letter-spacing: 3px
-		.content-item
-			margin-top: 30px
-			.w-image
-				position: relative
-				width: 200px
-				height: 200px
-				margin: 0 auto
-				border-radius: 50%
-				overflow: hidden
-				box-shadow: 2px 2px 7px #a28bda
-				&::before
-					position: absolute
-					content: ''
-					top: 0
-					left: 0
-					height: 200px
-					width: 200px
-					background-color: rgba(66, 38, 134, 0.3)
-				img
-					width: 105%
-			.w-info
-				margin-top: 30px
-				text-align: center
-			.w-hobby
-				margin-top: 20px
-				i
-					display: inline-block
-					width: 30px
-					height: 30px
-					border-radius: 50%
-					background-color: #9d5ed7
-					color: $white
-					margin: 0 5px
-					line-height: 30px
-
-#skills,
-#resume,
-#blog,
-#contact,
-	.headline
-		position: relative
-		margin-bottom: 60px
-		padding-left: 50px
-		font-size: 32pxy
-		color: #000
-		text-align: left
-		&:before
-			position: absolute
-			content: ''
-			bottom: -4px
-			left: 50px
-			height: 2px
-			width: 35px
-			background-color: #000
-
-#skills
-	padding-top: 100px
-	padding-bottom: 140px
-	text-align: center
-.space3d
-	margin-top: -40px
-	perspective: 1000px
-	width: 250px
-	height: 250px
-	text-align: center
-	display: inline-block
-	.cube-box
-		display: inline-block
-		transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275)
-		text-align: center
-		position: relative
-		width: 100%
-		height: 100%
-		transform-style: preserve-3d
-		transform: rotateX(-15deg) rotateY(15deg)
-	.cube
-		position: absolute
-		user-select: none
-		overflow: hidden
-		border: 1px solid $mainpink
-		background: $mainpink
-		box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3)
-		color: #fff
-		line-height: 250px
-		font-size: 37px
-		font-weight: 600
-		opacity: 0.8
-		cursor: pointer
-		@include transition(background 0.4s)
-		&:hover
-			background-color: #531888
-			border: 1px solid #531888
-	.cube-front
-		width: 250px
-		height: 250px
-		transform: translate3d(0, 0, 125px)
-	.cube-top
-		width: 250px
-		height: 250px
-		transform: rotateX(90deg) translate3d(0, 0, 125px)
-	.cube-bottom
-		width: 250px
-		height: 250px
-		transform: rotateX(-90deg) translate3d(0, 0, 125px)
-	.cube-left
-		width: 250px
-		height: 250px
-		left: 50%
-		margin-left: -125px
-		transform: rotateY(-90deg) translate3d(0, 0, 125px)
-	.cube-right
-		width: 250px
-		height: 250px
-		left: 50%
-		margin-left: -125px
-		transform: rotateY(90deg) translate3d(0, 0, 125px)
-	.cube-front, .cube-left,
-	.cube-right, .cube-top,
-	.cube-bottom, .cube-back
-		background-size: auto 100%
-	.cube-back
-		width: 250px
-		height: 250px
-		transform: rotateY(180deg) translate3d(0, 0, 125px)
-
- // 3D cube end
-// Tabs
-.tabs
-	position: relative
-	overflow: hidden
-	min-height: 250px
-	.tab
-		position: absolute
-		top: -100%
-		opacity: 0
-		left: 0
-		@include transition(all 1s)
-		&.active
-			opacity: 1
-			top: 0
-
-// stars section
-.flowers
-	position: relative
-	height: 300px
-	background-image: url(../img/flow-bg.jpg)
-	background-size: cover
-	background-position-y: -50px
-	overflow: hidden
-	color: #fff
-	.flowl-1
-		position: absolute
-		left: 0
-		width: 100%
-		height: 100%
-		background-image: url(../img/fl.png)
-		animation: 20s linear 0s infinite slowDown
-	.flowl-2
-		position: absolute
-		left: 0
-		width: 100%
-		height: 100%
-		background-image: url(../img/fl.png)
-		animation: 15s linear 0s infinite slowDown
-	.flowl-3
-		position: absolute
-		left: 0
-		width: 100%
-		height: 100%
-		transform: rotate(180deg)
-		background-image: url(../img/fl.png)
-		animation: 10s linear 0s infinite slowDown
-
-
-@keyframes slowDown
-	0%
-		top: -300px
-	20%
-		left: -50px
-	50%
-		left: 0px
-	100%
-		top: 260px
-		left: 50px
-
-
-// Resume section
-#resume
-	margin-top: 80px
-	.exp-desc
-		margin-bottom: 50px
-		text-align: center
-		h4
-			font-size: 25px
-			font-weight: 400
-			font-family: inherit
-			text-transform: uppercase
-			letter-spacing: 4px
-		.exp-img
-			display: inline-block
-			border-radius: 50%
-			border: 10px solid $white
-			width: 165px
-		.exp-title
-			position: relative
-			display: inline-block
-			margin-left: 40px
-			width: calc(100% - 220px)
-			height: 110px
-			padding-right: 35px
-			background: $lightmain
-			background: linear-gradient(to right, $lightmain, $mainpink);
-			color: $white
-			line-height: 110px
-			vertical-align: middle
-			&::before
-				position: absolute
-				top: 0
-				left: -138px
-				content: ''
-				height: 110px
-				border-right: 70px solid $lightmain
-				border-top: 54px solid transparent
-				border-bottom: 54px solid transparent
-				border-left: 70px solid transparent
-				z-index: -1
-
-	.experience
-		position: relative
-		.exp-line
-			position: absolute
-			top: 0
-			left: calc(50% - 2px)
-			height: 100%
-			width: 2px
-			background-color: $lightmain
-		.exp-year
-			display: inline-block
-			padding: 5px 10px
-			background-color: $lightmain
-			color: $white
-			margin-bottom: 8px
-		.exp-label
-			font-weight: 600
-			color: $main
-			margin-bottom: 8px
-			text-transform: uppercase
-			letter-spacing: 1px
-		.exp-item
-			position: relative
-			margin-bottom: 50px
-			&:last-child
-				margin-bottom: 0
-			&::before
-				position: absolute
-				content: ''
-				top: 50%
-				margin-top: -7px
-				width: 15px
-				height: 15px
-				background-color: $lightmain
-				border: 4px solid $white
-				border-radius: 50%
-			&::after
-				position: absolute
-				top: 50%
-				margin-top: -41px
-				height: 82px
-				font-size: 70px
-				line-height: 70px
-				color: $lightmain
-				width: 20px
-
-		.left-side > .exp-item
-			padding-right: 40px
-			text-align: right
-			&::before
-				right: -21px
-			&::after
-				content: '}'				
-				right: 3px
-		.right-side > .exp-item
-			padding-left: 40px
-			margin-top: 50px
-			margin-bottom: 0
-			text-align: left 
-			&::before
-				left: -24px
-			&::after
-				content: '{'
-				left: -3px
-
-
-
-
-
-// Blog
-#blog
-	margin-top: 70px
-	.blog-item
-		font-size: 0
-		min-height: 310px
-		margin-bottom: 50px
-		.w-poster
-			position: relative
-			display: inline-block
-			padding: 0 10px
-			width: 50%
-			float: left
-			.w-image
-				position: relative
-				height: 300px
-				overflow: hidden
-				img
-					width: 100%
-					position: absolute
-					top: 0
-					left: 0
-					@include transition(transform 1s)
-					&:hover
-						transform: scale(1.4,1.4)
-			.blog-label
-				position: absolute
-				top: 20px
-				left: 0
-				padding: 10px 30px
-				background-color: $lightmain
-				font-size: 14px
-				text-transform: uppercase
-				letter-spacing: 2px
-				color: $white
-		.w-content
-			display: inline-block
-			padding: 0 20px
-			width: 50%
-			font-size: 16px
-			text-align: center
-			.date
-				color: $lightmain
-				font-weight: 600
-				font-size: 13px
-				text-align: right
-			.category
-				margin-top: 20px
-				color: $silver
-				font-size: 14px
-				text-transform: uppercase
-				letter-spacing: 1px
-			.theme
-				margin-top: 15px
-				margin-bottom: 10px
-				font-weight: 600
-				font-size: 20px
-				line-height: 24px
-				letter-spacing: 2px
-			.read-more
-				display: inline-block
-				margin-top: 20px
-				color: $main
-				font-weight: 600
-		&:nth-child(even)
-			.w-poster
-				float: right
-
-#contact
-	position: relative
-	.w-form
-		text-align: center
-		width: 60%
-		max-width: 700px
-		margin: 0 auto
-		input
-			margin-bottom: 15px
-			width: 100%
-			border: 1px solid #ccc
-			border-radius: 2px
-			text-indent: 22px
-			line-height: 40px
-		textarea
-			width: 100%
-			height: 110px
-			border: 1px solid #ccc
-			text-indent: 15px
-			line-height: 35px
-		#user-name
-			width: 50%
-		#user-mail
-			width: 49%
-			margin-left: 1%
-			float: right
-		.submit-btn
-			display: inline-block
-			padding: 5px 25px
-			margin-top: 15px
-			background-color: $lightmain
-			border: 1px solid $lightmain
-			color: $white
-			min-width: 150px
-			text-transform: uppercase
-			letter-spacing: 1px
-	#map
-		margin-top: 40px
-		border-top: 2px solid $lightmain
-		height: 330px
-	.flower-1
-		position: absolute
-		width: 200px
-		top: -165px
-		left: -70px
-		z-index: -1
-	.flower-2
-		position: absolute
-		width: 200px
-		top: 225px
-		right: -70px
-		transform: rotate(225deg)
-footer
-	background: #363b3f
-	min-height: 130px
+	height: 100vh
 	color: $white
-	position: absolute
-	bottom: 0
-	left: 0
-	width: 100%
-	text-align: center
-	a
-		color: #fff
-	.copyright
-		margin: 20px 0 17px
-	.w-social
-		a
+	@extend %extend_bg_gradient
+	.logo
+		img
+			margin-top: $m20
+			height: 50px
+
+	.w-title
+		margin-top: 40%
+		transform: translateY(-50%)
+		h1
+			position: relative
+			margin-bottom: $m20
+			padding-bottom: $p25
+			text-transform: uppercase
+			font-size: 55px
+			line-height: 55px
+			letter-spacing: 5px
+			&::before
+				position: absolute
+				bottom: 0
+				left: 0
+				content: ''
+				height: 2px
+				width: 140px
+				background: $white
+		h3
 			font-size: 30px
-			padding: 0 5px
+			line-height: 30px
+			text-transform: uppercase 
+			list-style-position: 3px
 
+	.w-menu
+		position: fixed	
+		width: 100%
+		ul
+			li
+				display: inline-block
+				a
+					display: inline-block
+					padding: $p15
+					color: $white
+					font-size: 14px
+					font-weight: 600
+					text-transform: uppercase
 
-
-//ALWAYS END
-@import "_preloader.sass"
-@import "media"
+	
+// Section about 
+#about
+	padding-bottom: $p50
+	border-bottom: 1px solid $silver
+	.about-img
+		margin-top: $m30
+	ul
+		padding: $p10 $p30
+		li
+			list-style-type: circle 

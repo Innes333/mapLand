@@ -1,4 +1,4 @@
-var     gulp         = require('gulp'),
+var gulp         = require('gulp'),
 		sass         = require('gulp-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		minifycss    = require('gulp-minify-css'),
@@ -7,16 +7,16 @@ var     gulp         = require('gulp'),
 		concat       = require('gulp-concat'),
 		concatCss    = require('gulp-concat-css'),
 		uglify       = require('gulp-uglifyjs'),
-		jade         = require('gulp-jade'),
+		// jade         = require('gulp-jade'),
 		imagemin     = require('gulp-imagemin');
 
 gulp.task('browser-sync', [
-							'styles',							
+							'styles',
 							'compress',
 							'scriptsConcat',
 							'scriptsCommon',
-							'vendorCss',							
-							'templates',
+							'vendorCss',
+							'htmlDist',
 							'fontsdist',
 							], function() {
 		browserSync.init({
@@ -24,7 +24,7 @@ gulp.task('browser-sync', [
 						baseDir: "./dist"
 				},
 				notify: false,
-				files: ['./dist/**/*.html','./dist/js/*.js','./dist/css/*.css']
+				files: ['./dist/js/*.js','./dist/css/*.css']
 		});
 });
 
@@ -50,7 +50,7 @@ gulp.task('compress', function() {
 
 gulp.task('scriptsConcat', function() {
   return gulp.src('app/libs/**/*.js')
-    .pipe(concat('plagin.min.js'))
+    .pipe(concat('plugin.min.js'))
     .pipe(uglify(''))
     .pipe(gulp.dest('dist/js'));
 });
@@ -64,32 +64,26 @@ gulp.task('scriptsCommon', function() {
 
 gulp.task('vendorCss', function () {
   return gulp.src('app/libs/**/*.css')
-    .pipe(concatCss("vendor.css"))   
-    .pipe(minifycss('')) 
+    .pipe(concatCss("vendor.css"))
+    .pipe(minifycss(''))
     .pipe(rename("vendor.min.css"))
     .pipe(gulp.dest('dist/css'));
-}); 
+});
 
-gulp.task('templates', function() {
-  var YOUR_LOCALS = {};
-  gulp.src('app/**/*.jade')
-    .pipe(jade({
-      locals: YOUR_LOCALS,
-      pretty: true
-    }))
-    .pipe(gulp.dest('./dist/'))
+gulp.task('htmlDist', function() {
+	return gulp.src('app/**/*')
+	.pipe(gulp.dest('dist/'));
 });
 
 gulp.task('fontsdist', function() {
-  	return gulp.src('app/fonts/*/**')   
+  	return gulp.src('app/fonts/*/**')
     .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('watch', function () {
 	gulp.watch('app/sass/*.sass', ['styles']);
 	gulp.watch('app/libs/**/*.js', ['scripts']);
-	gulp.watch('app/js/*.js',['scriptsCommon']);	
-	gulp.watch('app/**/*.jade', ['templates']);
+	gulp.watch('app/js/*.js',['scriptsCommon']);
+	gulp.watch('app/**/*.html', ['htmlDist']);
 });
 gulp.task('default', ['watch','browser-sync']);
-

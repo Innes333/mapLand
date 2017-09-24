@@ -126,8 +126,6 @@
 		methods.toggleClasses(sel.burgerMenu, sel.active);
 		// set burger pos
 		methods.burgerPos(sel.navBar);
-		// cube rotatio
-		methods.cubeRotation(cube.cube);
 
 		// methods.renderMap();
 

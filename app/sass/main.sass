@@ -100,9 +100,59 @@ header
 
 //Section services
 #services
+	.headline
+		margin-bottom: $m30
+		text-align: center
+		color: $textGreen
+		font-style: italic
+		font-weight: 600
+		font-size: 18px
 	.w-service-item
+		padding: $p20 0 $p50
 		.title
-			margin-bottom: $m10
-			color: $green
+			margin-top: $m20
+			margin-bottom: $m20
+			color: $textGreen
 			font-size: 18px
 			font-weight: 600
+			letter-spacing: 1px
+		.read-more-btn
+			display: inline-block
+			padding: 7px $p30
+			margin-top: $m20
+			text-transform: uppercase
+			letter-spacing: 1px
+			background: $black
+			color: $white
+			font-size: 12px
+		&:nth-child(odd)
+			background: $whiteGreen
+			.title
+				color: $black
+
+	.w-achive
+		padding: $p40 0 $p50
+		border-top: 1px solid $silver
+		.achive-list
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 1px
+				height: 100%
+				background: $green
+			li
+				position: relative
+				padding: $p10 0 $p10 $p20
+				&::before
+					content: ''
+					position: absolute
+					left: -4px
+					top: 50%
+					margin-top: -4px
+					height: 8px
+					width: 8px
+					border-radius: 50%
+					background: $green

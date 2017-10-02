@@ -50,6 +50,7 @@ header
 	.w-title
 		margin-top: 40%
 		transform: translateY(-50%)
+		text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35);
 		h1
 			position: relative
 			margin-bottom: $m20
@@ -85,6 +86,7 @@ header
 					font-size: 14px
 					font-weight: 600
 					text-transform: uppercase
+					text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35);
 
 	
 // Section about 
@@ -156,3 +158,33 @@ header
 					width: 8px
 					border-radius: 50%
 					background: $green
+
+#products
+	.w-product-subtitle
+		text-align: center
+		span
+			color: #7ab5b9
+			display: inline-block
+			line-height: 22px
+			font-size: 22px
+			text-transform: uppercase
+			padding: 15px 30px
+			border-top: 2px solid #87c1c5
+			border-bottom: 2px solid #87c1c5
+	
+	.w-product-item
+		padding: 50px 0
+
+		.title
+			font-size: 22px
+			font-weight: 600
+			margin-bottom: 35
+
+		&:after
+			content: ''
+			display: block
+			height: 1px
+			width: 340px
+			margin: 0 auto
+			background: #abe1e5
+			margin-top: 30px

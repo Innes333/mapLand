@@ -212,9 +212,37 @@ header
 			background: $textGreen
 			margin-top: 30px
 
+		.portal-tablet-wrapper
+			width: 168px
+			border: 13px solid #bcbcbc
+			border-radius: 13px
+			margin: 0 auto
+			position: relative
+
+			&.mobile-version {
+				width: 95px
+			}
+
+			&:after
+				content: ''
+				display: block
+				width: 9px
+				border-radius: 9px
+				height: 9px
+				background: #ffffff
+				position: absolute
+				bottom: -11px
+				left: 50%
+				margin-left: -5px
+			img
+				max-width: 100%
+
+
 // Section News
 
 #blog
+	padding-bottom: 50px
+	border-bottom: 1px solid #e1e4e4
 	img
 		width: 100%
 
@@ -230,7 +258,7 @@ header
 	.blog-more-news 
 		margin-top: 55px
 		text-align: center
-		span
+		a
 			text-transform: uppercase
 			border: 4px solid $textGreen
 			color: $textGreen
@@ -240,3 +268,20 @@ header
 			&:hover
 				background: $textGreen
 				color: #ffffff
+
+// Section Contacts
+
+#contact
+	color: #ffffff
+	background: linear-gradient(to right,  #333333 0%,#333333 50%,#ffffff 50%,#ffffff 100%)
+
+	.s-headline 
+		color: #ffffff
+		&:before
+			background: #ffffff
+
+	form
+		input
+			height: 30px
+			width: 100px
+			border: 2px solid #d8d8d8

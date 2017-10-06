@@ -212,9 +212,62 @@ header
 			background: $textGreen
 			margin-top: 30px
 
+		.portal-tablet-wrapper
+			width: 194px
+			border: 13px solid #bcbcbc
+			border-radius: 13px
+			margin: 0 auto
+			position: relative
+
+			&.mobile-version 
+				width: 118px
+				border: 9px solid #bcbcbc
+				border-bottom: 11px solid #bcbcbc
+				border-radius: 9px
+				margin: 0
+				display: inline-block
+			
+			&:after
+				content: ''
+				display: block
+				width: 7px
+				border-radius: 7px
+				height: 7px
+				background: #ffffff
+				position: absolute
+				bottom: -9px
+				left: 50%
+				margin-left: -5px
+			img
+				max-width: 100%
+
+		.portal-mobile-wrapper
+			width: 165px
+			border: 9px solid #bcbcbc
+			border-radius: 9px
+			position: relative
+			display: inline-block
+			margin-left: 35px
+			img 
+				max-width: 100%
+			&:after
+				content: ''
+				display: block
+				width: 7px
+				border-radius: 7px
+				height: 7px
+				background: #ffffff
+				position: absolute
+				right: -8px
+				top: 50%
+				margin-top: -5px
+
+
 // Section News
 
 #blog
+	padding-bottom: 50px
+	border-bottom: 1px solid #e1e4e4
 	img
 		width: 100%
 
@@ -240,3 +293,20 @@ header
 			&:hover
 				background: $textGreen
 				color: #ffffff
+
+// Section Contacts
+
+#contact
+	color: #ffffff
+	background: linear-gradient(to right,  #333333 0%,#333333 50%,#ffffff 50%,#ffffff 100%)
+
+	.s-headline 
+		color: #ffffff
+		&:before
+			background: #ffffff
+
+	form
+		input
+			height: 30px
+			width: 100px
+			border: 2px solid #d8d8d8

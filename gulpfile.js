@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
 		browserSync  = require('browser-sync').create(),
 		concat       = require('gulp-concat'),
 		concatCss    = require('gulp-concat-css'),
-		uglify       = require('gulp-uglifyjs'),
+		// uglify       = require('gulp-uglifyjs'),
 		// jade         = require('gulp-jade'),
 		imagemin     = require('gulp-imagemin');
 
@@ -51,13 +51,13 @@ gulp.task('compress', function() {
 gulp.task('scriptsConcat', function() {
   return gulp.src('app/libs/**/*.js')
     .pipe(concat('plugin.min.js'))
-    .pipe(uglify(''))
+    // .pipe(uglify(''))
     .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('scriptsCommon', function() {
   return gulp.src('app/js/*.js')
-    .pipe(uglify(''))
+    // .pipe(uglify(''))
     .pipe(concat('common.min.js'))
     .pipe(gulp.dest('dist/js'));
 });

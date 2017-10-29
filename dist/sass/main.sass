@@ -86,7 +86,7 @@ header
 					font-size: 14px
 					font-weight: 600
 					text-transform: uppercase
-					text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35);
+					text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
 
 	
 // Section about 
@@ -123,16 +123,16 @@ header
 #services
 	// achivement and benefit headline
 	.headline
-		margin-bottom: $m30
+		margin-bottom: 0
 		text-align: center
 		color: $textGreen
 		font-style: italic
 		font-weight: 600
-		font-size: 18px
-		
+		font-size: 18px		
 
 	.w-service-item
-		padding: $p20 0 $p50
+		padding: $p60 0
+		
 		.title
 			margin-top: $m20
 			margin-bottom: $m20
@@ -140,6 +140,7 @@ header
 			font-size: 18px
 			font-weight: 600
 			letter-spacing: 1px
+
 		.read-more-btn
 			display: inline-block
 			padding: 7px $p30
@@ -149,8 +150,10 @@ header
 			background: $black
 			color: $white
 			font-size: 12px
-		&:nth-child(odd)
-			background: $whiteGreen
+			
+		&:nth-child(odd)			
+			padding: $p70 0
+			background: linear-gradient(135deg,#c3f9f2 50%,#bfffcf 100%)
 			.title
 				color: $black
 
@@ -213,23 +216,27 @@ header
 			border-bottom: 2px solid $textGreen
 	
 	.w-product-item
-		padding-top: 50px
+		position: relative
+		padding: $p70 0
+		text-align: center
 
 		.title
 			font-size: 22px
 			font-family: "OpenSansBold"
-			margin-bottom: 35
+			margin-bottom: $m30
+
 		&:last-child
 			&:after
 				content: none
 		&:after
 			content: ''
-			display: block
+			position: absolute
 			height: 1px
 			width: 340px
-			margin: 0 auto
+			bottom: 0
+			left: 50%
+			transform: translate(-50%, 0)
 			background: $textGreen
-			margin-top: 30px
 
 		.portal-tablet-wrapper
 			width: 194px
@@ -399,16 +406,14 @@ header
 
 footer
 	position: absolute
-	bottom: 0
-	
+	bottom: 0	
 	width: 100%
-	padding: 15px 30px
-	background: #333333
-	*
-		color: #ffffff
+	padding: $p40 0
+	background: $black
+	color: $white
+
 	.footer-nav
 		margin-left: 90px
-		float: left
 		position: relative
 		&:after
 			content: ''
@@ -425,14 +430,18 @@ footer
 			display: inline-block
 			margin-right: 25px
 			font-size: 13px
+		a
+			color: $white
+
 	.footer-contacts
-		float: right
+		text-align: right
 		span
 			display: block
 			margin-bottom: 15px
 			font-size: 16px
 		a
 			display: block
+			color: $white
 
 
 	

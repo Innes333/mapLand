@@ -1,44 +1,33 @@
 (function() {
 
 	$(document).ready(function() {
-
-		$('.svg-progress-1').svgprogress({
-			figure: "circle",
-			progressFillGradient: ['#719fdd','#9fe1d5'],
-			progressWidth: 20,
-			unitsOutput: '',
-			endFill: 20
-		}); 
-
-		$('.svg-progress-2').svgprogress({
-			figure: "circle",
-			progressFillGradient: ['#719fdd','#9fe1d5'],
-			progressWidth: 20,
-			unitsOutput: '',
-			endFill: 75
-		}); 
-
-		$('.svg-progress-3').svgprogress({
-			figure: "circle",
-			progressFillGradient: ['#719fdd','#9fe1d5'],
-			progressWidth: 20,
-			unitsOutput: '',
-			endFill: 50
-		});
-
+		progressBarCircle();
 	});
 
 	$(window).scroll(function() {
-		
-		var obj = $('.w-progress').position().top,
-			scrollTop = $(window).scrollTop();
-		
-		if (scrollTop === obj) {
-			$('.svg-progress-1').trigger("redraw");
-			$('.svg-progress-2').trigger("redraw");
-			$('.svg-progress-3').trigger("redraw");
-		}
-		
+		progressBarCircle();
 	});
 
 })();
+
+function progressBarCircle() {
+	var obj = $('#about').position().top,
+		scrollTop = $(window).scrollTop(),
+		scrollTopServ = $('#services').position().top,
+		circleColor = $(this).find('.circle-chart__color'),
+		circleText = $(this).find('.circle-chart__text');
+
+	
+	if ((scrollTop > obj) && (scrollTop < scrollTopServ)) {
+		$('.circle-chart').each(function(){
+			circleColor.addClass('circle-chart__circle');
+			circleText.addClass('circle-chart__info');
+		});
+	} else {
+		$('.circle-chart').each(function(){
+			circleColor.removeClass('circle-chart__circle');
+			circleText.removeClass('circle-chart__info');
+		});
+	} 
+	
+}

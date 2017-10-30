@@ -91,7 +91,6 @@ header
 	
 // Section about 
 #about
-	padding-bottom: $p50
 	border-bottom: 1px solid $silver
 	.about-img
 		margin-top: $m30
@@ -107,6 +106,7 @@ header
 
 .w-progress 
 	margin: 50px 0
+	text-align: center;
 	.svg-progress-output 
 	    left: 47%
 	    top: 20%
@@ -118,6 +118,32 @@ header
 	.svg-progress-text
 		text-align: center
 		font-weight: bold
+		
+.circle-chart__circle
+  animation: circle-chart-fill 2s reverse
+  transform: rotate(-90deg)
+  transform-origin: center
+  
+
+.circle-chart__circle--negative
+  transform: rotate(-90deg) scale(1, -1)
+ 
+
+.circle-chart__info
+  animation: circle-chart-appear 2s forwards
+  opacity: 0
+  transform: translateY(0.3em)
+
+@keyframes circle-chart-fill
+  to
+    stroke-dasharray: 0 100
+
+
+@keyframes circle-chart-appear
+  to
+    opacity: 1
+    transform: translateY(0)
+
 
 //Section services
 #services
@@ -132,7 +158,7 @@ header
 		
 
 	.w-service-item
-		padding: $p20 0 $p50
+		padding: $p30 0
 		.title
 			margin-top: $m20
 			margin-bottom: $m20
@@ -197,7 +223,7 @@ header
 // Section Products
 
 #products
-	padding-bottom: 50px
+	padding-bottom: 30px
 	border-bottom: 1px solid #e1e4e4
 
 	.w-product-subtitle
@@ -285,7 +311,7 @@ header
 // Section News
 
 #blog
-	padding-bottom: 50px
+	padding-bottom: 30px
 	border-bottom: 1px solid #e1e4e4
 	img
 		width: 100%
@@ -343,7 +369,7 @@ header
 
 	.contact-form
 		padding-left: 30px
-		padding-bottom: 50px
+		padding-bottom: 30px
 		p
 			font-size: 16px
 			color: #333333
@@ -434,5 +460,3 @@ footer
 		a
 			display: block
 
-
-	

@@ -41,7 +41,7 @@ header
 	position: relative
 	height: 100vh
 	color: $white
-	@extend %extend_bg_gradient
+	@extend %bg_gradient
 	.logo
 		img
 			margin-top: $m20
@@ -50,6 +50,7 @@ header
 	.w-title
 		margin-top: 40%
 		transform: translateY(-50%)
+		text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
 		h1
 			position: relative
 			margin-bottom: $m20
@@ -85,11 +86,11 @@ header
 					font-size: 14px
 					font-weight: 600
 					text-transform: uppercase
+					text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
 
 	
 // Section about 
 #about
-	padding-bottom: $p50
 	border-bottom: 1px solid $silver
 	.about-img
 		margin-top: $m30
@@ -97,21 +98,77 @@ header
 		padding: $p10 $p30
 		li
 			list-style-type: circle 
+	.w-progress
+		margin-top: $m40
+		clear: both
+	svg
+		height: 180px
+		margin-bottom: 10px
+
+.w-progress 
+	margin: 50px 0
+	text-align: center
+	p
+		font-weight: 900
+	.svg-progress-output 
+	    left: 47%
+	    top: 20%
+	    display: block
+	    position: absolute
+	    color: $main
+	    font-weight: bold
+	    font-size: 20px
+	.svg-progress-text
+		text-align: center
+		font-weight: bold
+		
+.circle-chart__circle
+  animation: circle-chart-fill 2s reverse
+  transform: rotate(-90deg)
+  transform-origin: center
+  
+
+.circle-chart__circle--negative
+  transform: rotate(-90deg) scale(1, -1)
+ 
+
+.circle-chart__info
+  animation: circle-chart-appear 2s forwards
+  opacity: 0
+  transform: translateY(0.3em)
+  .circle-chart__percent
+  	font-size: 7px
+  	color: $green
+
+@keyframes circle-chart-fill
+  to
+    stroke-dasharray: 0 100
+
+
+@keyframes circle-chart-appear
+  to
+    opacity: 1
+    transform: translateY(0)
+
 
 //Section services
 #services
 	// achivement and benefit headline
 	.headline
-		margin-bottom: $m30
+		margin-bottom: $m40
 		text-align: center
 		color: $textGreen
 		font-style: italic
 		font-weight: 600
-		font-size: 18px
-		
+		font-size: 18px		
 
 	.w-service-item
-		padding: $p20 0 $p50
+		padding: $p60 0
+		text-align: center
+
+		.service-descr
+			text-align: left
+
 		.title
 			margin-top: $m20
 			margin-bottom: $m20
@@ -119,17 +176,20 @@ header
 			font-size: 18px
 			font-weight: 600
 			letter-spacing: 1px
+
 		.read-more-btn
 			display: inline-block
 			padding: 7px $p30
-			margin-top: $m20
+			margin-top: $m30
 			text-transform: uppercase
 			letter-spacing: 1px
 			background: $black
 			color: $white
 			font-size: 12px
-		&:nth-child(odd)
-			background: $whiteGreen
+			
+		&:nth-child(odd)			
+			padding: $p70 0
+			@extend %bg_item
 			.title
 				color: $black
 
@@ -159,3 +219,263 @@ header
 					width: 8px
 					border-radius: 50%
 					background: $green
+
+// Section benefits
+.w-benefit
+	text-align: center
+	padding-bottom: 100px
+	border-bottom: 1px solid #e1e4e4
+
+	.benefit-item-title
+		min-height: 75px
+		font-size: 16px
+		line-height: 22px
+		font-family: "OpenSansBold"
+
+
+// Section Products
+
+#products
+	padding-bottom: 30px
+	border-bottom: 1px solid #e1e4e4
+
+	.w-product-subtitle
+		text-align: center
+		span
+			color: $textGreen
+			display: inline-block
+			line-height: 22px
+			font-size: 22px
+			text-transform: uppercase
+			padding: 15px 30px
+			border-top: 2px solid $textGreen
+			border-bottom: 2px solid $textGreen
+	
+	.w-product-item
+		position: relative
+		padding: $p70 0
+		text-align: center
+
+		.title
+			font-size: 22px
+			font-family: "OpenSansBold"
+			margin-bottom: $m30
+
+		&:last-child
+			&:after
+				content: none
+		&:after
+			content: ''
+			position: absolute
+			height: 1px
+			width: 340px
+			bottom: 0
+			left: 50%
+			transform: translate(-50%, 0)
+			background: $textGreen
+
+		.portal-tablet-wrapper
+			width: 194px
+			border: 13px solid #bcbcbc
+			border-radius: 13px
+			margin: 0 auto
+			position: relative
+
+			&.mobile-version 
+				width: 118px
+				border: 9px solid #bcbcbc
+				border-bottom: 11px solid #bcbcbc
+				border-radius: 9px
+				margin: 0
+				display: inline-block
+			
+			&:after
+				content: ''
+				display: block
+				width: 7px
+				border-radius: 7px
+				height: 7px
+				background: #ffffff
+				position: absolute
+				bottom: -9px
+				left: 50%
+				margin-left: -5px
+			img
+				max-width: 100%
+
+		.portal-mobile-wrapper
+			width: 165px
+			border: 9px solid #bcbcbc
+			border-radius: 9px
+			position: relative
+			display: inline-block
+			margin-left: 35px
+			img 
+				max-width: 100%
+			&:after
+				content: ''
+				display: block
+				width: 7px
+				border-radius: 7px
+				height: 7px
+				background: #ffffff
+				position: absolute
+				right: -8px
+				top: 50%
+				margin-top: -5px
+
+
+// Section News
+
+#blog
+	padding-bottom: 30px
+	border-bottom: 1px solid #e1e4e4
+	img
+		width: 100%
+
+	.blog-item-date
+		color: $textGreen
+		font-size: 12px
+		text-transform: uppercase
+		margin: 10px 0
+
+	.blog-item-title
+		font-family: "OpenSansBold"
+		line-height: 18px
+	.blog-more-news 
+		margin-top: 55px
+		text-align: center
+		a
+			text-transform: uppercase
+			border: 4px solid $textGreen
+			color: $textGreen
+			padding: 10px 20px;
+			display: inline-block
+			text-decoration: none
+			&:hover
+				background: $textGreen
+				color: #ffffff
+
+// Section Contacts
+
+#contact
+	color: #ffffff
+	background: linear-gradient(to right,  #333333 0%,#333333 50%,#ffffff 50%,#ffffff 100%)
+
+	.s-headline 
+		color: #ffffff
+		&:before
+			background: #ffffff
+
+	.contact-info
+		margin-bottom: 50px
+		line-height: 25px
+		font-size: 16px
+		color: #ffffff
+		font-weight: bold
+		i
+			font-size: 30px
+			float: left
+			margin-right: 14px
+			margin-top: 2px
+			display: inline-block
+		span
+			display: block
+			a
+				color: #fff
+
+	.contact-form
+		padding-left: 30px
+		padding-bottom: 30px
+		p
+			font-size: 16px
+			color: #333333
+			margin-top: 36px
+			margin-bottom: 35px
+			font-weight: bold
+		form
+			max-width: 450px
+			color: #dddddd
+			label
+				font-size: 16px
+				color: #5d5d5d
+				margin-bottom: 10px
+				display: block
+			input
+				height: 30px
+				width: 100%
+				padding-left: 20px
+				margin-bottom: 20px
+				border: 2px solid #dddddd
+				box-sizing: border-box
+			textarea
+				border: 2px solid #dddddd
+				max-width: 100%
+				max-height: 80px
+				width: 100%
+				padding: 20px
+				box-sizing: border-box
+				margin-bottom: 30px
+			.contact-form-submit
+				background: #333333
+				font-size: 12px
+				padding: 5px 30px
+				text-align: center
+				display: block
+				text-transform: uppercase
+				width: auto
+				border: none
+				width: 90px
+				margin: 0 auto
+
+#clients
+	padding: 20px 40px
+	background: #ebf8f9
+	text-align: center
+	h2
+		text-transform: uppercase
+		font-size: 24px
+	.clients-item
+		display: inline-block
+		vertical-align: middle
+		padding: 33px
+
+footer
+	position: absolute
+	bottom: 0	
+	width: 100%
+	padding: $p40 0
+	background: $black
+	color: $white
+
+	.footer-nav
+		margin-left: 90px
+		position: relative
+		&:after
+			content: ''
+			display: block
+			width: 294px
+			height: 78px
+			top: 0
+			position: absolute
+			left: -90px
+			background: url('../img/footer-bg.png') no-repaet left top
+
+		li
+			list-style: none
+			display: inline-block
+			margin-right: 25px
+			font-size: 13px
+		a
+			color: $white
+
+	.footer-contacts
+		text-align: right
+		span
+			display: block
+			margin-bottom: 15px
+			font-size: 16px
+		a
+			display: block
+			color: $white
+

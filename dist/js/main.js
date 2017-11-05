@@ -1,18 +1,8 @@
 (function() {
 
-	$(document).ready(function() {
-		progressBarCircle();
-	});
-
-	$(window).scroll(function() {
-		progressBarCircle();
-	});
-
+	var windowHeight = window.outerHeight;
 	
-
-})();
-
-function progressBarCircle() {
+	var progressBarCircle = function() {
 		var obj = $('#about').position().top,
 			scrollTop = $(window).scrollTop(),
 			scrollTopServ = $('#services').position().top;
@@ -30,4 +20,29 @@ function progressBarCircle() {
 			});
 		} 
 		
-	}
+	};
+
+	var activeNav = function(el) {
+		if(window.scrollY >= (windowHeight - 100)) {
+			$(el).addClass('active');
+		} else {
+			$(el).removeClass('active');
+		}
+
+	};
+
+
+	$(document).ready(function() {
+
+		progressBarCircle();
+		
+	});
+	
+	$(window).scroll(function() {
+		activeNav('.w-menu');
+		progressBarCircle();
+	});
+
+	
+
+})();

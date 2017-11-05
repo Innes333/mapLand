@@ -18,6 +18,93 @@ section
 	min-height: 300px
 	
 
+.w-desktop-device
+	position: relative
+	width: 400px
+	height: 250px
+	border-top: 10px solid $pcGray 
+	border-bottom: 30px solid $pcGray 
+	border-left: 10px solid $pcGray 
+	border-right: 10px solid $pcGray 
+	margin: 0 auto $m30
+
+	img
+		width: 100%
+		height: 100%
+
+	&::before
+		position: absolute
+		content: ''
+		bottom: -63px
+		left: 50%
+		margin-left: -25px
+		height: 30px
+		width: 50px
+		background: $pcGray
+	
+	&::after
+		content: ''
+		position: absolute
+		bottom: -71px
+		left: 50%
+		margin-left: -50px
+		width: 100px
+		height: 5px
+		background: $pcGray
+
+
+.w-tablet-device
+	width: 194px
+	border: 13px solid #bcbcbc
+	border-radius: 13px
+	margin: 0 auto
+	position: relative
+
+	&.mobile-version 
+		width: 118px
+		border: 9px solid #bcbcbc
+		border-bottom: 11px solid #bcbcbc
+		border-radius: 9px
+		margin: 0
+		display: inline-block
+	
+	&:after
+		content: ''
+		display: block
+		width: 7px
+		border-radius: 7px
+		height: 7px
+		background: $white
+		position: absolute
+		bottom: -9px
+		left: 50%
+		margin-left: -5px
+	img
+		max-width: 100%
+
+.w-mobile-device
+	width: 165px
+	border: 9px solid #bcbcbc
+	border-radius: 9px
+	position: relative
+	display: inline-block
+	margin-left: 35px
+	img 
+		max-width: 100%
+	&:after
+		content: ''
+		display: block
+		width: 7px
+		border-radius: 7px
+		height: 7px
+		background: $white
+		position: absolute
+		right: -8px
+		top: 50%
+		margin-top: -5px
+
+		
+
 // Section titles
 .s-headline
 	position: relative
@@ -41,11 +128,7 @@ header
 	position: relative
 	height: 100vh
 	color: $white
-	@extend %bg_gradient
-	.logo
-		img
-			margin-top: $m20
-			height: 50px
+	@extend %bg_gradient	
 
 	.w-title
 		margin-top: 40%
@@ -76,61 +159,130 @@ header
 	.w-menu
 		position: fixed	
 		width: 100%
+		z-index: 100
+		&.active
+			transition: all 0.8s
+			background: rgba(58, 193, 178, .9)
+			box-shadow: 1px 1px 5px 1px $silver
+			.link
+				padding: $p10 $p15
 		ul
-			li
-				display: inline-block
-				a
-					display: inline-block
-					padding: $p15
-					color: $white
-					font-size: 14px
-					font-weight: 600
-					text-transform: uppercase
-					text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
+			display: inline-block
+			width: 95%	
+		li
+			display: inline-block
+		
+		.logo
+			display: inline-block
+			width: 4%
+			padding: 0
+			padding-left: 20px
+			img
+				height: 35px
+		.link
+			display: inline-block
+			padding: $p20 $p15 $p10
+			color: $white
+			font-size: 14px
+			font-weight: 600
+			text-transform: uppercase
+			text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
+			border-bottom: 3px solid transparent
+			&:hover
+				border-bottom: 3px solid #fff 
 
+
+// Planets
 .solarsystem-outer
-  height: 300px
-  width: 100%
-  position: absolute
-  right: -600px
-  top: 0
+	position: absolute
+	right: -20%
+	top: 65px
+	height: 800px
+	width: 800px
 
 #solarsystem
-  position: relative
-  margin-top: 200px
-  margin-left: 300px
-  border: 0
-  opacity: .5
+	position: relative
+	width: 100%	
+	height: 100%
+	border: 0
 
-#sun
-  width: 100px
-  height: 100px
-  border-radius: 50%
-  position: absolute
-  left: 250px
-  margin-top: 250px
+	#sun
+		position: absolute
+		height: 70px
+		width: 70px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		border-radius: 50%
+		box-shadow: 2px 2px 13px 12px #f9f97d
+		background: #f9f97d
+		img
+			width: 100%
+			height: 100%
+
+	#mercury
+		position: absolute
+		left: 25%
+		top: 25%
+		width: 50%
+		height: 50%
+		-webkit-animation: orbit 9s linear infinite
+		&::after
+			content: ''
+			width: 35px
+			height: 35px
+			position: absolute
+			top: -17px
+			background: url('../img/mercury.png')
+			background-size: 35px 35px
+			box-shadow: 1px 0px 10px 1px orange
+
+	#venera
+		position: absolute
+		left: 13%
+		top: 13%
+		width: 74%
+		height: 74%
+		-webkit-animation: orbit 18s linear infinite
+		&::after
+			content: ''
+			width: 25px
+			height: 25px
+			position: absolute
+			top: -12px
+			background: url('../img/venera.png')
+			background-size: 25px 25px
+			box-shadow: 1px 0px 11px 1px yellow
+
+	#earth
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		-webkit-animation: orbit 30s linear infinite
+		&::after
+			content: ''
+			width: 70px
+			height: 70px
+			position: absolute
+			display: block
+			top: -35px
+			background: url('../img/earth.png')
+			background-size: 70px 70px
+			box-shadow: 1px 0px 11px 2px #377abc
+
+	.planet
+		border: 2px solid $white
+		border-radius: 50%
 
 
 
-#mercury
-  width: 200px
-  height: 200px
-  position: absolute
-  left: 200px
-  margin-top: 200px
-  -webkit-animation: orbit 7.23s linear infinite
-
-#earth
-  width: 400px
-  height: 400px
-  position: absolute
-  left: 100px
-  top: 100px
-  -webkit-animation: orbit 30s linear infinite
-
-.planet
-  border: 1px solid #ffffff
-  border-radius: 50%
+#mercury:after, 
+#earth:after,
+#venera:after
+	border-radius: 50%
+	margin-left: 40%
 
 
 @-webkit-keyframes orbit
@@ -138,33 +290,6 @@ header
     -webkit-transform: rotate(360deg)
 
 
-
-
-#mercury:after
-  content: " "
-  width: 10px
-  height: 10px
-  position: absolute
-  top: -5px
-
-#earth:after
-  content: " "
-  width: 25px
-  height: 25px
-  position: absolute
-  display: block
-  top: -12px
-  background: url('http://www.clker.com/cliparts/O/A/b/V/I/Q/earth-md.png')
-  background-size: 25px 25px;
-
-
-#sun, #mercury:after, #venus:after, #moon:after, #jupiter:after, #saturn:after, #uranus:after, #neptune:after
-  background: #000
-
-
-#mercury:after, #venus:after, #earth:after, #moon:after, #mars:after, #jupiter:after, #saturn:after, #uranus:after, #neptune:after
-  border-radius: 50%
-  margin-left: 40%
 
 // Section about 
 #about
@@ -176,7 +301,7 @@ header
 		li
 			list-style-type: circle 
 	.w-progress
-		margin-top: $m40
+		margin-top: 85px
 		clear: both
 	svg
 		height: 180px
@@ -247,22 +372,14 @@ header
 			text-align: left
 
 		.title
-			margin-top: $m20
 			margin-bottom: $m20
 			color: $textGreen
-			font-size: 18px
+			font-size: 20px
 			font-weight: 600
 			letter-spacing: 1px
 
-		.read-more-btn
-			display: inline-block
-			padding: 7px $p30
-			margin-top: $m30
-			text-transform: uppercase
-			letter-spacing: 1px
-			background: $black
-			color: $white
-			font-size: 12px
+		.text
+			text-indent: 30px
 			
 		&:nth-child(odd)			
 			padding: $p70 0
@@ -271,7 +388,7 @@ header
 				color: $black
 
 	.w-achive
-		padding: $p40 0 $p50
+		padding: $p40 0 $p70
 		border-top: 1px solid $silver
 		.achive-list
 			position: relative
@@ -351,104 +468,75 @@ header
 			transform: translate(-50%, 0)
 			background: $textGreen
 
-		.portal-tablet-wrapper
-			width: 194px
-			border: 13px solid #bcbcbc
-			border-radius: 13px
-			margin: 0 auto
-			position: relative
-
-			&.mobile-version 
-				width: 118px
-				border: 9px solid #bcbcbc
-				border-bottom: 11px solid #bcbcbc
-				border-radius: 9px
-				margin: 0
-				display: inline-block
-			
-			&:after
-				content: ''
-				display: block
-				width: 7px
-				border-radius: 7px
-				height: 7px
-				background: #ffffff
-				position: absolute
-				bottom: -9px
-				left: 50%
-				margin-left: -5px
-			img
-				max-width: 100%
-
-		.portal-mobile-wrapper
-			width: 165px
-			border: 9px solid #bcbcbc
-			border-radius: 9px
-			position: relative
-			display: inline-block
-			margin-left: 35px
-			img 
-				max-width: 100%
-			&:after
-				content: ''
-				display: block
-				width: 7px
-				border-radius: 7px
-				height: 7px
-				background: #ffffff
-				position: absolute
-				right: -8px
-				top: 50%
-				margin-top: -5px
+		
 
 
 // Section News
 
-#blog
+#news
 	padding-bottom: 30px
 	border-bottom: 1px solid #e1e4e4
+
+	.read-more 
+		display: inline-block
+		margin: 20px 0
+		padding: 5px 20px
+		background: $black
+		color: $white
+		font-size: 12px
+		border: 1px solid $black
+		text-transform: uppercase
+		transition: all 0.6s
+		cursor: pointer
+		letter-spacing: 1px
+		&:hover
+			background: $green
+			border: 1px solid $green
+			box-shadow: 1px 1px 2px 2px $silver
+			
+	
 	img
 		width: 100%
 
-	.blog-item-date
+	.news-item-date
 		color: $textGreen
 		font-size: 12px
 		text-transform: uppercase
 		margin: 10px 0
 
-	.blog-item-title
+	.news-item-title
 		font-family: "OpenSansBold"
 		line-height: 18px
-	.blog-more-news 
+	.news-more-news 
 		margin-top: 55px
 		text-align: center
 		a
 			text-transform: uppercase
 			border: 4px solid $textGreen
 			color: $textGreen
-			padding: 10px 20px;
+			padding: 10px 20px
 			display: inline-block
 			text-decoration: none
 			&:hover
 				background: $textGreen
-				color: #ffffff
+				color: $white
 
 // Section Contacts
 
 #contact
-	color: #ffffff
-	background: linear-gradient(to right,  #333333 0%,#333333 50%,#ffffff 50%,#ffffff 100%)
+	color: $white
+	background: linear-gradient(to right, $black 0%,$black 50%,$white 50%,$white 100%)
 
 	.s-headline 
-		color: #ffffff
+		color: $white
 		&:before
-			background: #ffffff
+			background: $white
 
 	.contact-info
 		margin-bottom: 50px
 		line-height: 25px
 		font-size: 16px
-		color: #ffffff
+		color: $white
 		font-weight: bold
 		i
 			font-size: 30px
@@ -458,56 +546,64 @@ header
 			display: inline-block
 		span
 			display: block
-			a
-				color: #fff
+		a
+			color: #fff
 
 	.contact-form
 		padding-left: 30px
 		padding-bottom: 30px
 		p
 			font-size: 16px
-			color: #333333
+			color: $black
 			margin-top: 36px
 			margin-bottom: 35px
 			font-weight: bold
 		form
 			max-width: 450px
-			color: #dddddd
+			color: $silver
+			text-align: center
+
 			label
 				font-size: 16px
 				color: #5d5d5d
 				margin-bottom: 10px
 				display: block
+
 			input
-				height: 30px
+				height: 35px
 				width: 100%
-				padding-left: 20px
+				text-indent: 10px
 				margin-bottom: 20px
-				border: 2px solid #dddddd
+				border: 1px solid $gray
 				box-sizing: border-box
+
 			textarea
-				border: 2px solid #dddddd
+				border: 1px solid $gray
 				max-width: 100%
-				max-height: 80px
+				max-height: 90px
 				width: 100%
 				padding: 20px
 				box-sizing: border-box
 				margin-bottom: 30px
-			.contact-form-submit
-				background: #333333
-				font-size: 12px
+
+			.submit-btn
+				display: inline-block
 				padding: 5px 30px
-				text-align: center
-				display: block
+				background: $black
+				color: $white
+				border: 1px solid $black
 				text-transform: uppercase
-				width: auto
-				border: none
-				width: 90px
-				margin: 0 auto
+				transition: all 0.6s
+				cursor: pointer
+				letter-spacing: 1px
+				&:hover
+					background: $green
+					border: 1px solid $green
+					box-shadow: 1px 1px 2px 2px $silver
 
 #clients
 	padding: 20px 40px
-	background: #ebf8f9
+	@extend %bg_item
 	text-align: center
 	h2
 		text-transform: uppercase

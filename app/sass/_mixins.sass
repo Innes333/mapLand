@@ -41,13 +41,22 @@
 	background: -webkit-linear-gradient(-45deg,  #41c7a2 0%,#336c9b 100%)
 	background: linear-gradient(135deg,  #41c7a2 0%,#336c9b 100%)
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41c7a2', endColorstr='#336c9b',GradientType=1 )
+
 %extend_bg_blue
 	background: #41c7a2
 	background: -webkit-linear-gradient(-45deg, $blue 0, $green 60%,$yellowGreen 100%)
 	background: linear-gradient(135deg, $blue 0, $green 60%, $yellowGreen 100%)
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$blue, endColorstr=$main,GradientType=1 )
 	background: -moz-linear-gradient(-45deg,$blue 0, $green 60%, $yellowGreen 100%)
-%extend_bg_gradient
+
+%bg_item
+	background: #41c7a2
+	background: -webkit-linear-gradient(-45deg, #c3f9f2 0, #bfffcf 100%)
+	background: linear-gradient(135deg, #c3f9f2 50%, #bfffcf 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#c3f9f2, endColorstr=#bfffcf,GradientType=1 )
+	background: -moz-linear-gradient(-45deg, #c3f9f2 0, #bfffcf 100%)
+
+%bg_gradient
 	background: #41c7a2
 	background: -webkit-linear-gradient(-45deg, $blue 0, $green 60%,$yellowGreen 100%)
 	background: linear-gradient(135deg, $blue 0, $green 60%, $yellowGreen 100%)

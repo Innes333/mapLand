@@ -134,12 +134,21 @@ header
 		margin-top: 40%
 		transform: translateY(-50%)
 		text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
+
+		.icon-vmaps-logo
+			display: inline-block
+			font-size: 200px
+
+		.title
+			display: inline-block
+			margin-left: 20px
+
 		h1
 			position: relative
-			margin-bottom: $m20
-			padding-bottom: $p25
+			margin-bottom: $m40
+			padding-bottom: $p50
 			text-transform: uppercase
-			font-size: 55px
+			font-size: 75px
 			line-height: 55px
 			letter-spacing: 5px
 			&::before
@@ -294,6 +303,10 @@ header
 // Section about 
 #about
 	border-bottom: 1px solid $silver
+	padding-bottom: 100px
+	background-image: url(../img/theme-green.png)
+	background-position: bottom
+
 	.about-img
 		margin-top: $m30
 	ul
@@ -483,10 +496,12 @@ header
 		padding: 5px 20px
 		background: $black
 		color: $white
+		font-size: 12px
 		border: 1px solid $black
 		text-transform: uppercase
 		transition: all 0.6s
 		cursor: pointer
+		letter-spacing: 1px
 		&:hover
 			background: $green
 			border: 1px solid $green
@@ -512,7 +527,7 @@ header
 			text-transform: uppercase
 			border: 4px solid $textGreen
 			color: $textGreen
-			padding: 10px 20px;
+			padding: 10px 20px
 			display: inline-block
 			text-decoration: none
 			&:hover
@@ -530,8 +545,11 @@ header
 		&:before
 			background: $white
 
+	.w-contacts
+		margin: $m30 0 $m70
+
 	.contact-info
-		margin-bottom: 50px
+		margin-bottom: $m50
 		line-height: 25px
 		font-size: 16px
 		color: $white
@@ -551,21 +569,17 @@ header
 		padding-left: 30px
 		padding-bottom: 30px
 		p
+			margin: $m50 0 $m30
+			text-align: center
 			font-size: 16px
 			color: $black
-			margin-top: 36px
-			margin-bottom: 35px
 			font-weight: bold
+
 		form
+			margin: 0 auto
 			max-width: 450px
 			color: $silver
 			text-align: center
-
-			label
-				font-size: 16px
-				color: #5d5d5d
-				margin-bottom: 10px
-				display: block
 
 			input
 				height: 35px
@@ -578,9 +592,9 @@ header
 			textarea
 				border: 1px solid $gray
 				max-width: 100%
-				max-height: 90px
+				height: 130px
 				width: 100%
-				padding: 20px
+				padding: 5px 10px
 				box-sizing: border-box
 				margin-bottom: 30px
 
@@ -593,6 +607,7 @@ header
 				text-transform: uppercase
 				transition: all 0.6s
 				cursor: pointer
+				letter-spacing: 1px
 				&:hover
 					background: $green
 					border: 1px solid $green

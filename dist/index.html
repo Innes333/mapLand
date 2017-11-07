@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Portfolio Front-end developer - Inna Ivashchuk</title>
+	<title>VMaps - Spatial intelligence</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/header.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
-	<link rel="stylesheet" href="fonts/IconMoon/icon.css">
+	<link rel="stylesheet" href="fonts/iconmoon/icon.css">
 	<!-- Load CSS End -->
 
 </head>
@@ -26,7 +26,7 @@
 	<header id="home">
 		<div class="w-menu">
 			<a href="#" class="logo">
-				<img src="img/logo-vmaps.png" alt="vmaps logo">
+				<i class="icon-vmaps-logo"></i>Maps
 			</a>	
 			<ul class="menu right">
 				<li><a class="link" href="#">Home</a></li>
@@ -41,9 +41,11 @@
 		<div class="header-content container">
 			<div class="row">						
 				<div class="w-title">
-					<h1>Vmaps</h1>
-					<h3>Spatial intelligence</h3>
-					
+					<span class="icon-vmaps-logo"></span>
+					<div class="title">
+						<h1>maps</h1>
+						<h3>Spatial intelligence</h3>
+					</div>
 				</div>
 			</div>
 		</div>	
@@ -481,22 +483,24 @@
 					<div class="s-headline">
 						Contacts
 					</div>
-					<div class="contact-info">
-						<i class="icon-location"></i>
-						<span>Kyiv, Ukraine</span><span> Solom'yanskaya str. 3</span>
+					<div class="w-contacts">
+						<div class="contact-info">
+							<i class="icon-location"></i>
+							<span>Kyiv, Ukraine</span><span> Solom'yanskaya str. 3</span>
+						</div>
+						<div class="contact-info">
+							<i class="icon-mail"></i>
+							<a href="mailto:support@vmaps.ml">support@vmaps.ml</a>
+						</div>
+						<div class="contact-info"><i class="icon-phone"></i><span>+ 380 99 1652132</span></div>
 					</div>
-					<div class="contact-info">
-						<i class="icon-envelope3"></i>
-						<a href="mailto:support@vmaps.ml">support@vmaps.ml</a>
-					</div>
-					<div class="contact-info"><i class="icon-phone"></i><span>+ 380 99 1652132</span></div>
 				</div>				
 				<div class="col-md-6 col-sm-6 contact-form">
 					<p>If you have any question, don’t hesitate to contact us</p>
 					<form>
 						<input type="text" name="Your name"  placeholder="Your name">
 						<input type="email" name="email"  placeholder="Your email">
-						<textarea> Your message</textarea>
+						<textarea placeholder="Your message"></textarea>
 						<button type="submit" class="submit-btn"> Send
 						</button>
 					</form>

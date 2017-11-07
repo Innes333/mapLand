@@ -306,13 +306,21 @@ header
 	padding-bottom: 100px
 	background-image: url(../img/theme-green.png)
 	background-position: bottom
+	background-repeat: no-repeat
+	font-size: 16px
 
 	.about-img
 		margin-top: $m30
 	ul
-		padding: $p10 $p30
+		padding: $p30 $p30 $p20
 		li
-			list-style-type: circle 
+			padding-bottom: $p20
+
+		i
+			margin-right: $m10
+			font-size: 20px
+			color: $textGreen
+
 	.w-progress
 		margin-top: 85px
 		clear: both
@@ -368,6 +376,9 @@ header
 
 //Section services
 #services
+	padding-bottom: 100px
+	border-bottom: 1px solid $silver
+
 	// achivement and benefit headline
 	.headline
 		margin-bottom: $m40
@@ -430,8 +441,6 @@ header
 // Section benefits
 .w-benefit
 	text-align: center
-	padding-bottom: 100px
-	border-bottom: 1px solid #e1e4e4
 
 	.benefit-item-title
 		min-height: 75px

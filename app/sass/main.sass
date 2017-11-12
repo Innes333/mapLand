@@ -16,6 +16,7 @@
 
 section
 	min-height: 300px
+	transform: translate3d(0,0,0)
 	
 
 .w-desktop-device
@@ -58,16 +59,7 @@ section
 	border: 13px solid #bcbcbc
 	border-radius: 13px
 	margin: 0 auto
-	position: relative
-
-	&.mobile-version 
-		width: 118px
-		border: 9px solid #bcbcbc
-		border-bottom: 11px solid #bcbcbc
-		border-radius: 9px
-		margin: 0
-		display: inline-block
-	
+	position: relative	
 	&:after
 		content: ''
 		display: block
@@ -83,32 +75,47 @@ section
 		max-width: 100%
 
 .w-mobile-device
-	width: 165px
-	border: 9px solid #bcbcbc
+	width: 145px
+	height: 220px
+	border-top: 9px solid $pcGray
+	border-bottom: 14px solid $pcGray
+	border-right: 9px solid $pcGray
+	border-left: 9px solid $pcGray
 	border-radius: 9px
 	position: relative
 	display: inline-block
 	margin-left: 35px
 	img 
 		max-width: 100%
-	&:after
+		height: 100%
+	&::after
 		content: ''
-		display: block
-		width: 7px
-		border-radius: 7px
-		height: 7px
-		background: $white
 		position: absolute
-		right: -8px
-		top: 50%
-		margin-top: -5px
+		bottom: -12px
+		left: 50%
+		margin-left: -5px
+		display: inline-block
+		width: 10px
+		height: 10px
+		border-radius: 10px
+		background: $white
+	&.portrait
+		width: 220px
+		height: 145px
+		border-left: 14px solid $pcGray
+		border-bottom: 9px solid $pcGray
+		&::after
+			bottom: 50%
+			left: -7px
+			margin-bottom: -7px
+
 
 		
 
 // Section titles
 .s-headline
 	position: relative
-	padding: $p30 $p40
+	padding: $p40 $p40 $p30
 	font-size: 25px
 	font-weight: 600
 	text-transform: uppercase
@@ -116,7 +123,7 @@ section
 	&::before
 		position: absolute
 		left: 0
-		top: 50%
+		top: 55%
 		margin-top: -2px
 		content: ''
 		height: 2px
@@ -128,6 +135,7 @@ header
 	position: relative
 	height: 100vh
 	color: $white
+	overflow: hidden
 	@extend %bg_gradient	
 
 	.w-title
@@ -172,9 +180,8 @@ header
 		&.active
 			transition: all 0.8s
 			background: rgba(58, 193, 178, .9)
-			box-shadow: 1px 1px 5px 1px $silver
-			.link
-				padding: $p10 $p15
+			box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37)
+				
 		ul
 			display: inline-block
 			width: 95%	
@@ -186,17 +193,21 @@ header
 			width: 4%
 			padding: 0
 			padding-left: 20px
-			img
-				height: 35px
+			font-size: 18px
+			color: $white
+			i
+				font-size: 15px
+			
 		.link
 			display: inline-block
-			padding: $p20 $p15 $p10
+			padding: $p10 $p15
 			color: $white
 			font-size: 14px
 			font-weight: 600
 			text-transform: uppercase
 			text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
 			border-bottom: 3px solid transparent
+			&.active,
 			&:hover
 				border-bottom: 3px solid #fff 
 
@@ -214,6 +225,7 @@ header
 	width: 100%	
 	height: 100%
 	border: 0
+	transform: translate3d(0,0,0)
 
 	#sun
 		position: absolute
@@ -361,7 +373,7 @@ header
   transform: translateY(0.3em)
   .circle-chart__percent
   	font-size: 7px
-  	color: $green
+  	fill: #777777
 
 @keyframes circle-chart-fill
   to

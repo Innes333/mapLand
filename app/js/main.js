@@ -23,7 +23,7 @@
 	};
 
 	var activeNav = function(el) {
-		if(window.scrollY >= (windowHeight - 100)) {
+		if(window.scrollY >= (windowHeight - 300)) {
 			$(el).addClass('active');
 		} else {
 			$(el).removeClass('active');
@@ -31,10 +31,47 @@
 
 	};
 
+	var onScroll = function(event){
+		var scrollPos = $(document).scrollTop();
+		$('.link').each(function () {
+			var currLink = $(this);
+			var refElement = $(currLink.attr("href"));
+			if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() - 20 > scrollPos) {
+				$('.menu a').removeClass("active");
+				currLink.addClass("active");
+			}
+		});
+	};
+
+	var smoothScroll = function() {
+		//smoothscroll
+		$('a[href^="#"]').on('click', function (e) {
+			e.preventDefault();
+			$(document).off("scroll");
+			
+			$('.link').removeClass('active');
+			$(this).addClass('active');
+			
+			var target = this.hash,
+				menu = target;
+			$target = $(target);
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top
+			}, 1000, 'swing', function () {
+				window.location.hash = target;
+				$(document).on("scroll", onScroll);
+			});
+		});
+	};
+
 
 	$(document).ready(function() {
 
+		$(document).on("scroll", onScroll);
+
 		progressBarCircle();
+
+		smoothScroll();	
 		
 	});
 	

@@ -27,7 +27,7 @@ section
 	border-bottom: 30px solid $pcGray 
 	border-left: 10px solid $pcGray 
 	border-right: 10px solid $pcGray 
-	margin: 0 auto $m30
+	margin: 0 auto $m40
 
 	img
 		width: 100%
@@ -139,9 +139,9 @@ header
 	@extend %bg_gradient	
 
 	.w-title
-		margin-top: 40%
+		position: absolute
+		top: 50%
 		transform: translateY(-50%)
-		text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
 
 		.icon-vmaps-logo
 			display: inline-block
@@ -150,7 +150,7 @@ header
 		.title
 			display: inline-block
 			margin-left: 20px
-
+			
 		h1
 			position: relative
 			margin-bottom: $m40
@@ -171,7 +171,6 @@ header
 			font-size: 30px
 			line-height: 30px
 			text-transform: uppercase 
-			list-style-position: 3px
 
 	.w-menu
 		position: fixed	
@@ -323,6 +322,7 @@ header
 
 	.about-img
 		margin-top: $m30
+		margin-bottom: $m40
 	ul
 		padding: $p30 $p30 $p20
 		li
@@ -586,14 +586,12 @@ header
 		a
 			color: #fff
 
-	.contact-form
-		padding-left: 30px
-		padding-bottom: 30px
+	.contact-form		
+		color: $black
 		p
 			margin: $m50 0 $m30
 			text-align: center
 			font-size: 16px
-			color: $black
 			font-weight: bold
 
 		form
@@ -602,37 +600,38 @@ header
 			color: $silver
 			text-align: center
 
-			input
-				height: 35px
-				width: 100%
-				text-indent: 10px
-				margin-bottom: 20px
-				border: 1px solid $gray
-				box-sizing: border-box
+		input
+			height: 35px
+			width: 100%
+			text-indent: 10px
+			margin-bottom: 20px
+			border: 1px solid $gray
+			box-sizing: border-box
 
-			textarea
-				border: 1px solid $gray
-				max-width: 100%
-				height: 130px
-				width: 100%
-				padding: 5px 10px
-				box-sizing: border-box
-				margin-bottom: 30px
+		textarea
+			border: 1px solid $gray
+			max-width: 100%
+			height: 130px
+			width: 100%
+			padding: 5px 10px
+			box-sizing: border-box
+			margin-bottom: 30px
 
-			.submit-btn
-				display: inline-block
-				padding: 5px 30px
-				background: $black
-				color: $white
-				border: 1px solid $black
-				text-transform: uppercase
-				transition: all 0.6s
-				cursor: pointer
-				letter-spacing: 1px
-				&:hover
-					background: $green
-					border: 1px solid $green
-					box-shadow: 1px 1px 2px 2px $silver
+		.submit-btn
+			display: inline-block
+			padding: 5px 30px
+			margin-bottom: 40px
+			background: $black
+			color: $white
+			border: 1px solid $black
+			text-transform: uppercase
+			transition: all 0.6s
+			cursor: pointer
+			letter-spacing: 1px
+			&:hover
+				background: $green
+				border: 1px solid $green
+				box-shadow: 1px 1px 2px 2px $silver
 
 #clients
 	padding: 20px 40px
@@ -685,3 +684,5 @@ footer
 			display: block
 			color: $white
 
+
+@import "_media"

@@ -9,8 +9,27 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	/*media for header*/
+	header
+		.w-title
+			h1
+				font-size: 50px
+				padding-bottom: 20px
+				margin-bottom: 20px
+			h3
+				font-size: 25px
 
+			.icon-vmaps-logo
+				font-size: 150px
+
+	.solarsystem-outer
+		right: -50%
+
+	/* media for services */
+	.service-descr
+		.title
+			text-align: center
+			margin-top: 20px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -36,12 +55,42 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	
+
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px)
+@media only screen and (max-width : 550px)
 	/**/
+	header
+		.w-title
+			top: 85%
+			h1
+				font-size: 40px
+				padding-bottom: 20px
+				margin-bottom: 20px
+			h3
+				font-size: 20px
+
+			.icon-vmaps-logo
+				font-size: 120px
+
+	.solarsystem-outer
+		top: 40px
+		right: -40%
+		width: 500px
+		height: 500px
+
+	#contact
+		background: $black
+		color: $white
+
+		.contact-form
+
+			p
+				color: $white
+
+			.submit-btn
+				background: $green
+				color: $black
 
 
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
-	/**/

@@ -21,6 +21,32 @@
 
 			.icon-vmaps-logo
 				font-size: 150px
+		.burger-menu
+			display: block
+			&.active + .menu
+				opacity: 1
+				top: 0
+				right: 0
+
+		.link.active
+			color: $textGreen
+			border-bottom: 3px solid $textGreen
+
+		.menu
+			position: absolute
+			top: -100%
+			right: -100%
+			padding: 45px 0
+			width: 100%
+			text-align: center
+			opacity: 0
+			min-height: 350px
+			box-shadow: 1px 1px 3px $main
+			background: #41c7a2
+			background: rgba(0, 0, 0, 0.8)
+			transition: all 0.4s
+			li
+				display: block
 
 	.solarsystem-outer
 		right: -50%
@@ -31,6 +57,23 @@
 			text-align: center
 			margin-top: 20px
 
+	
+	
+	#contact
+		background: $black
+		.w-contacts
+			text-align: center
+		.contact-info
+			margin-bottom: 20px
+
+		.contact-form
+			color: $white
+			.submit-btn
+				border: 1px solid $white
+
+		
+
+	
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
 
@@ -55,6 +98,19 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.w-benefit
+		.benefit-item-title
+			min-height: 30px
+	
+	.w-product-item
+		.pull-right
+			font: none
+	
+	footer
+		padding: 20px 0
+
+	.footer-nav
+		display: none
 	
 
 
@@ -80,17 +136,6 @@
 		width: 500px
 		height: 500px
 
-	#contact
-		background: $black
-		color: $white
-
-		.contact-form
-
-			p
-				color: $white
-
-			.submit-btn
-				background: $green
-				color: $black
+	
 
 

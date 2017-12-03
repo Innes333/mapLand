@@ -27,7 +27,7 @@ section
 	border-bottom: 30px solid $pcGray 
 	border-left: 10px solid $pcGray 
 	border-right: 10px solid $pcGray 
-	margin: 0 auto $m40
+	margin: 0 auto 65px
 
 	img
 		width: 100%
@@ -85,6 +85,7 @@ section
 	position: relative
 	display: inline-block
 	margin-left: 35px
+	margin-bottom: 40px
 	img 
 		max-width: 100%
 		height: 100%
@@ -102,11 +103,12 @@ section
 	&.portrait
 		width: 220px
 		height: 145px
-		border-left: 14px solid $pcGray
+		border-right: 14px solid $pcGray
 		border-bottom: 9px solid $pcGray
 		&::after
 			bottom: 50%
-			left: -7px
+			right: -12px
+			left: auto
 			margin-bottom: -7px
 
 
@@ -115,7 +117,7 @@ section
 // Section titles
 .s-headline
 	position: relative
-	padding: $p40 $p40 $p30
+	padding: 40px 40px 30px
 	font-size: 25px
 	font-weight: 600
 	text-transform: uppercase
@@ -153,8 +155,8 @@ header
 			
 		h1
 			position: relative
-			margin-bottom: $m40
-			padding-bottom: $p50
+			margin-bottom: 40px
+			padding-bottom: 50px
 			text-transform: uppercase
 			font-size: 75px
 			line-height: 55px
@@ -181,34 +183,35 @@ header
 			background: rgba(58, 193, 178, .9)
 			box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37)
 				
-		ul
-			display: inline-block
-			width: 95%	
-		li
-			display: inline-block
+	ul
+		display: inline-block
+		width: 95%	
+	li
+		display: inline-block
+	
+	.logo
+		display: inline-block
+		width: 4%
+		padding: 0
+		padding-left: 20px
+		font-size: 18px
+		line-height: 40px
+		color: $white
+		i
+			font-size: 15px
 		
-		.logo
-			display: inline-block
-			width: 4%
-			padding: 0
-			padding-left: 20px
-			font-size: 18px
-			color: $white
-			i
-				font-size: 15px
-			
-		.link
-			display: inline-block
-			padding: $p10 $p15
-			color: $white
-			font-size: 14px
-			font-weight: 600
-			text-transform: uppercase
-			text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
-			border-bottom: 3px solid transparent
-			&.active,
-			&:hover
-				border-bottom: 3px solid #fff 
+	.link
+		display: inline-block
+		padding: 10px 15px
+		color: $white
+		font-size: 14px
+		font-weight: 600
+		text-transform: uppercase
+		text-shadow: 0px 1px 0.98px rgba(0, 0, 0, 0.35)
+		border-bottom: 3px solid transparent
+		&.active,
+		&:hover
+			border-bottom: 3px solid #fff 
 
 
 // Planets
@@ -321,30 +324,39 @@ header
 	font-size: 16px
 
 	.about-img
-		margin-top: $m30
-		margin-bottom: $m40
-	ul
-		padding: $p30 $p30 $p20
+		margin-top: 30px
+		margin-bottom: 40px
+
+	.about-list
+		padding: 30px 30px 20px
 		li
-			padding-bottom: $p20
+			padding-bottom: 20px
 
 		i
-			margin-right: $m10
+			margin-right: 10px
 			font-size: 20px
 			color: $textGreen
 
-	.w-progress
-		margin-top: 85px
-		clear: both
+	.about-list-2
+		padding: 10px 30px 20px
+		li
+			padding-bottom: 10px
+
+		i
+			margin-right: 10px
+			font-size: 20px
+			color: $textGreen
+
+.w-progress 
+	margin: 70px 0 0
+	clear: both
+	text-align: center
 	svg
 		height: 180px
 		margin-bottom: 10px
-
-.w-progress 
-	margin: 50px 0
-	text-align: center
 	p
 		font-weight: 900
+		margin-bottom: 40px
 	.svg-progress-output 
 	    left: 47%
 	    top: 20%
@@ -388,12 +400,12 @@ header
 
 //Section services
 #services
-	padding-bottom: 100px
+	padding-bottom: 60px
 	border-bottom: 1px solid $silver
 
 	// achivement and benefit headline
 	.headline
-		margin-bottom: $m40
+		margin-bottom: 40px
 		text-align: center
 		color: $textGreen
 		font-style: italic
@@ -401,14 +413,14 @@ header
 		font-size: 18px		
 
 	.w-service-item
-		padding: $p60 0
+		padding: 60px 0
 		text-align: center
 
 		.service-descr
 			text-align: left
 
 		.title
-			margin-bottom: $m20
+			margin-bottom: 20px
 			color: $textGreen
 			font-size: 20px
 			font-weight: 600
@@ -418,14 +430,18 @@ header
 			text-indent: 30px
 			
 		&:nth-child(odd)			
-			padding: $p70 0
+			padding: 70px 0
 			@extend %bg_item
 			.title
 				color: $black
 
 	.w-achive
-		padding: $p40 0 $p70
+		padding: 40px 0 70px
 		border-top: 1px solid $silver
+
+		img
+			margin-bottom: 20px
+
 		.achive-list
 			position: relative
 			&::before
@@ -438,7 +454,7 @@ header
 				background: $green
 			li
 				position: relative
-				padding: $p10 0 $p10 $p20
+				padding: 10px 0 10px 20px
 				&::before
 					content: ''
 					position: absolute
@@ -455,10 +471,14 @@ header
 	text-align: center
 
 	.benefit-item-title
-		min-height: 75px
 		font-size: 16px
 		line-height: 22px
-		font-family: "OpenSansBold"
+		font-weight: 600
+		min-height: 75px
+
+	.benefit-item-img
+		margin-bottom: 40px
+
 
 
 // Section Products
@@ -481,13 +501,13 @@ header
 	
 	.w-product-item
 		position: relative
-		padding: $p70 0
+		padding: 70px 0
 		text-align: center
 
 		.title
 			font-size: 22px
 			font-family: "OpenSansBold"
-			margin-bottom: $m30
+			margin-bottom: 30px
 
 		&:last-child
 			&:after
@@ -502,13 +522,16 @@ header
 			transform: translate(-50%, 0)
 			background: $textGreen
 
+		.w-tablet-device
+			margin-bottom: 20px
+
 		
 
 
 // Section News
 
 #news
-	padding-bottom: 30px
+	padding-bottom: 60px
 	border-bottom: 1px solid #e1e4e4
 
 	.read-more 
@@ -554,6 +577,7 @@ header
 			&:hover
 				background: $textGreen
 				color: $white
+				box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4)
 
 // Section Contacts
 
@@ -567,29 +591,30 @@ header
 			background: $white
 
 	.w-contacts
-		margin: $m30 0 $m70
+		margin: 30px 0 70px
 
 	.contact-info
-		margin-bottom: $m50
+		margin-bottom: 50px
 		line-height: 25px
 		font-size: 16px
 		color: $white
+		vertical-align: middle
 		font-weight: bold
 		i
 			font-size: 30px
-			float: left
 			margin-right: 14px
 			margin-top: 2px
-			display: inline-block
-		span
-			display: block
+			display: inline-block		
 		a
 			color: #fff
+			vertical-align: super
+		span
+			vertical-align: super
 
 	.contact-form		
 		color: $black
 		p
-			margin: $m50 0 $m30
+			margin: 50px 0 30px
 			text-align: center
 			font-size: 16px
 			font-weight: bold
@@ -631,7 +656,7 @@ header
 			&:hover
 				background: $green
 				border: 1px solid $green
-				box-shadow: 1px 1px 2px 2px $silver
+				box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4)
 
 #clients
 	padding: 20px 40px
@@ -643,28 +668,19 @@ header
 	.clients-item
 		display: inline-block
 		vertical-align: middle
-		padding: 33px
+		padding: 30px 30px 0
+		margin-bottom: 20px
 
 footer
 	position: absolute
 	bottom: 0	
 	width: 100%
-	padding: $p40 0
+	padding: 40px 0
 	background: $black
 	color: $white
 
 	.footer-nav
-		margin-left: 90px
-		position: relative
-		&:after
-			content: ''
-			display: block
-			width: 294px
-			height: 78px
-			top: 0
-			position: absolute
-			left: -90px
-			background: url('../img/footer-bg.png') no-repaet left top
+		position: relative		
 
 		li
 			list-style: none
@@ -673,6 +689,12 @@ footer
 			font-size: 13px
 		a
 			color: $white
+
+	.w-footer-logo
+		text-transform: uppercase
+		margin-top: 10px
+		i
+			font-size: 45px
 
 	.footer-contacts
 		text-align: right

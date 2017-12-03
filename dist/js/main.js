@@ -64,12 +64,24 @@
 		});
 	};
 
+	var toggleClasses = function(el, activeClass) {
+		el.on('click', function(e) {
+			e.stopPropagation();
+			el.toggleClass(activeClass)
+			$(document).on('click', function() {
+				el.removeClass(activeClass);
+			})
+		});
+	};
+
 
 	$(document).ready(function() {
 
 		$(document).on("scroll", onScroll);
 
 		progressBarCircle();
+
+		toggleClasses($('.burger-menu'), 'active');
 
 		smoothScroll();	
 		

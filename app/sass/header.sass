@@ -66,26 +66,29 @@ input,textarea,button
 	margin-bottom: 25px
 
 // Burger button start----------------------
-.burger-button
+.burger-menu
+	width: 30px
+	height: 40px
 	position: relative
 	cursor: pointer
 	z-index: 1000
-	top: 32px
-	right: 12px
-	margin: 0 auto
+	top: 8px
+	right: 20px
+	float: right
+	display: none
 	span
 		position: absolute
 		width: 100%
 		left: 0
 		height: 3px
-		background-color: $black
+		background-color: $white
 		@include transition(all 0.3s)
 		&:nth-child(1)
 			top: 4px
 		&:nth-child(2)
-			top: 16px
+			top: 12px
 		&:nth-child(3)
-			top: 28px
+			top: 20px
 	&.active
 		span
 			&:nth-child(1)

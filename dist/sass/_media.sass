@@ -98,13 +98,26 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.s-headline
+		&::before
+		left: 8px
+		width: 25px
+
 	.w-benefit
 		.benefit-item-title
 			min-height: 30px
 	
 	.w-product-item
 		.pull-right
-			font: none
+			float: none!important
+
+	.w-desktop-device
+		width: 100%
+		max-height: 250px
+
+	.w-mobile-device
+		margin-left: 20px
+		margin-right: 20px
 	
 	footer
 		padding: 20px 0
@@ -119,6 +132,7 @@
 	/**/
 	header
 		.w-title
+			left: 20px
 			top: 85%
 			h1
 				font-size: 40px
@@ -131,10 +145,14 @@
 				font-size: 120px
 
 	.solarsystem-outer
-		top: 40px
+		top: 50px
 		right: -40%
-		width: 500px
-		height: 500px
+		width: 450px
+		height: 450px
+
+	.w-service-item
+		img
+			width: 100%
 
 	
 

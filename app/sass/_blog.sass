@@ -1,0 +1,62 @@
+@import "bourbon"
+@import "_vars.sass"
+@import "_mixins.sass"
+
+.w-article
+    padding-bottom: 30px
+
+    .w-article-theme
+        margin-top: 30px
+        margin-bottom: 40px
+        text-align: center
+
+    .article-title
+        margin-top: 10px
+
+    .article-theme
+        display: inline-block
+        padding: 5px 25px
+        font-size: 12px
+        font-weight: 600
+        text-transform: uppercase
+        letter-spacing: 2px
+        color: $blue
+
+    .w-article-text
+        font-size: 17px
+        letter-spacing: 1px
+        text-indent: 50px
+
+    .w-article-image
+        margin: 20px 0
+        text-align: center
+        img
+            max-height: 300px
+            min-height: 250px
+            width: auto
+
+.related-title
+    position: relative
+    margin: 35px 0
+    text-align: center
+    font-size: 20px
+    font-style: italic
+    letter-spacing: 2px
+
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        background-color: $silver
+        width: 40%
+        height: 1px
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        right: 0
+        background-color: $silver
+        width: 40%
+        height: 1px
+

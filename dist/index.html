@@ -27,9 +27,8 @@
 </head>
 
 <body>
-	<header id="home">
-		<div class="w-menu">
-			<a href="#home" class="logo"><span class="icon-vmaps-logo"></span></a>	
+	<header id="home" class="main">
+		<div class="w-menu">			
 			<div class="burger-menu">
 				<span></span>
 				<span></span>
@@ -481,29 +480,27 @@
 			</div>
 		</div>
 		<div class="container">
+
 			<div class="row">
-				Content is coming soon
-			</div>
-			<!-- <div class="row">
 				<div class="col-md-4 col-sm-6 col-xs-6">
 					<img src="img/img-news-1.png" alt="">
-					<div class="news-item-date">November 20 2017</div>
+					<div class="news-item-theme">GIS</div>
 					<div class="news-item-title">New technologies and products in GIS industry for improvment</div>
 					<div class="read-more">Read more</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6">
 					<img src="img/img-news-1.png" alt="">
-					<div class="news-item-date">November 20 2017</div>
+					<div class="news-item-theme">GIS</div>
 					<div class="news-item-title">Development of wireless with depending on GIS data and radio planning</div>
 					<div class="read-more">Read more</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6">
 					<img src="img/img-news-1.png" alt="">
-					<div class="news-item-date">November 20 2017</div>
+					<div class="news-item-theme">GIS</div>
 					<div class="news-item-title">Development of wireless with depending on GIS data and radio planning</div>
 					<div class="read-more">Read more</div>
 				</div>
-			</div> -->
+			</div>
 		</div>
 		
 	</section>
@@ -529,13 +526,17 @@
 				</div>				
 				<div class="col-md-6 col-sm-6 contact-form">
 					<p>If you have any question, don’t hesitate to contact us</p>
-					<form action="mail.php">
-						<input type="text" name="Your name" required placeholder="Your name">
-						<input type="email" name="email" required placeholder="Your email">
-						<textarea placeholder="Your message"></textarea>
+					<form action="mail.php"  id="send" class="send" >
+						<input type="text" id="name" name="name" required placeholder="Your name" required>
+						<input type="email" id="mail" name="email" required placeholder="Your email" required>
+						<textarea placeholder="Your message" name="text" id="text" required></textarea>
+						<input type="hidden" name="project_name" value="vmaps.ml">
+						<input type="hidden" name="admin_email" value="support@vmaps.ml">
+						<input type="hidden" name="form_subject" value="Letter from Vmaps">
 						<button type="submit" class="submit-btn"> Send
 						</button>
 					</form>
+
 				</div>				
 			</div>
 		</div>
